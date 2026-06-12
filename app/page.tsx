@@ -616,7 +616,7 @@ function FeedView(){
         <div key={f.id} style={{...cardSt,padding:18,marginBottom:12,background:f.isNew?T.accentLight:T.cardBg,borderColor:f.isNew?T.accentBorder:T.cardBorder,transition:"box-shadow 0.2s"}} onMouseEnter={e=>e.currentTarget.style.boxShadow="0 4px 18px rgba(15,44,35,0.07)"} onMouseLeave={e=>e.currentTarget.style.boxShadow="none"}>
           <div style={{display:"flex",justifyContent:"space-between",marginBottom:9}}>
             <span style={{fontSize:9,fontWeight:700,letterSpacing:"0.1em",color:c,background:c+"18",border:`1px solid ${c}30`,padding:"3px 9px",borderRadius:99}}>{f.type.toUpperCase()}</span>
-            <div style={{display:"flex",alignItems:"center",gap:8}}>{f.isNew&&<Pill bg={T.accentLight} color={T.accent} border={T.accentBorder}>LIVE</Pill>}<span style={{fontSize:11,color:T.mutedText}}>{f.time}</span></div>
+            <div style={{display:"flex",alignItems:"center",gap:8}}>{f.isNew && <Pill sm={true} bg={T.accentLight} color={T.accent} border={T.accentBorder}>LIVE</Pill>}<span style={{fontSize:11,color:T.mutedText}}>{f.time}</span></div>
           </div>
           <div style={{fontSize:14,color:T.bodyText,lineHeight:1.65}}><span style={{color:T.accent,fontWeight:700}}>{f.actor}</span> {f.text}</div>
           <div style={{display:"flex",gap:14,marginTop:12}}>
