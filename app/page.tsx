@@ -77,7 +77,7 @@ function TickerRibbon(){
 // ══════════════════════════════════════════════════════════════
 function LiveToastStack({onViewRadar,onNewRequest}){
   const [toasts,setToasts]=useState([]);
-  const timerRef=useRef();
+  const timerRef=useRef<any>(null);
 
   const fireEvent=useCallback(()=>{
     const ev=LIVE_EVENTS[Math.floor(Math.random()*LIVE_EVENTS.length)];
