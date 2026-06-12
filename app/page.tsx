@@ -6,7 +6,7 @@ import {
   Search, Bell, Filter, Sliders, ChevronRight, Zap, 
   TrendingUp, BarChart2, Radio, Send, CheckCircle, 
   Layers, MapPin, Briefcase, ShoppingBag, Grid, 
-  Plus, MoreHorizontal, User, Sparkles, AlertCircle
+  Plus, X, MoreHorizontal, User, Sparkles, AlertCircle
 } from "lucide-react";
 
 // ==========================================
