@@ -670,7 +670,7 @@ function ExplorerView({onBuy,onChat}){
               <div style={{padding:16,display:"flex",flexDirection:"column",gap:8,flex:1}}>
                 <div style={{display:"flex",justifyContent:"space-between",gap:6}}>
                   <span style={{fontSize:9,fontWeight:700,letterSpacing:"0.08em",color:tc,background:tc+"15",padding:"3px 8px",borderRadius:99,whiteSpace:"nowrap"}}>{(l.tag||l.category||"").toUpperCase()}</span>
-                  <Pill bg={bs.bg} color={bs.color} border={bs.border}>{l.badge}</Pill>
+                 <Pill sm={true} bg={bs.bg} color={bs.color} border={bs.border}>{l.badge}</Pill>
                 </div>
                 <div><div style={{fontSize:13,fontWeight:700,color:T.headText,lineHeight:1.4,marginBottom:2}}>{l.title}</div>{l.desc?<div style={{fontSize:11,color:T.mutedText,lineHeight:1.5,display:"-webkit-box",WebkitLineClamp:2,WebkitBoxOrient:"vertical",overflow:"hidden"}}>{l.desc}</div>:<div style={{fontSize:11,color:T.mutedText}}>{l.category}</div>}</div>
                 <div style={{fontSize:11,color:T.mutedText,display:"flex",gap:4,alignItems:"center"}}><span>{FLAGS[l.country]}</span><span>{COUNTRIES.find(c=>c.code===l.country)?.name}</span><span>·</span><span>{l.city}</span></div>
