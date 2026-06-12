@@ -561,6 +561,17 @@ const useZalorix=()=>useContext(ZalorixCtx);
 // ══════════════════════════════════════════════════════════════
 // SHARED UI PRIMITIVES
 // ══════════════════════════════════════════════════════════════
+function Pill({bg,color,border,children,sm}){return <span style={{fontSize:sm?8:9,fontWeight:700,letterSpacing:"0.07em",background:bg,color,border:`1px solid ${border}`,padding:sm?"2px 7px":"3px 9px",borderRadius:99,whiteSpace:"nowrap",display:"inline-flex",alignItems:"center",gap:4}}>{children}</span>;}
+function Toast({msg}){return <div style={{position:"fixed",bottom:28,left:"50%",transform:"translateX(-50%)",background:T.navBg,borderRadius:12,padding:"13px 24px",color:"#fff",fontSize:13,fontWeight:600,zIndex:9999,boxShadow:"0 8px 32px rgba(15,44,35,0.25)",whiteSpace:"nowrap",display:"flex",alignItems:"center",gap:9,pointerEvents:"none"}}><span style={{color:"#7de0a8"}}>✦</span>{msg}</div>;}
+
+// ══════════════════════════════════════════════════════════════
+// NAV
+// ══════════════════════════════════════════════════════════════
+const NAV=[{icon:"⚡",label:"Live Feed",id:"feed"},{icon:"🌐",label:"Global Explorer",id:"explorer"},{icon:"🎯",label:"Trade Radar",id:"radar"},{icon:"📡",label:"My Broadcasts",id:"broadcasts"},{icon:"💬",label:"Messages",id:"messages"},{icon:"📊",label:"Business Insights",id:"insights"},{icon:"📈",label:"Listing Insights",id:"listing_insights"},{icon:"💰",label:"Wallet & Payouts",id:"wallet"},{icon:"✦",label:"About Zalorix",id:"about"}];
+
+// ══════════════════════════════════════════════════════════════
+// FEED VIEW
+// ══════════════════════════════════════════════════════════════
 function Pill({ bg, color, border, children, sm }: { bg?: string; color?: string; border?: string; children: React.ReactNode; sm?: boolean }) {
   return (
     <span style={{
@@ -581,36 +592,6 @@ function Pill({ bg, color, border, children, sm }: { bg?: string; color?: string
     </span>
   );
 }
-  return (
-    <span style={{
-      fontSize: sm ? 8 : 9,
-      fontWeight: 700,
-      letterSpacing: "0.07em",
-      background: bg,
-      color,
-      border: `1px solid ${border}`,
-      padding: sm ? "2px 7px" : "3px 9px",
-      borderRadius: 99,
-      whiteSpace: "nowrap",
-      display: "inline-flex",
-      alignItems: "center",
-      gap: 4
-    }}>
-      {children}
-    </span>
-  );
-}
-function Toast({msg}){return <div style={{position:"fixed",bottom:28,left:"50%",transform:"translateX(-50%)",background:T.navBg,borderRadius:12,padding:"13px 24px",color:"#fff",fontSize:13,fontWeight:600,zIndex:9999,boxShadow:"0 8px 32px rgba(15,44,35,0.25)",whiteSpace:"nowrap",display:"flex",alignItems:"center",gap:9,pointerEvents:"none"}}><span style={{color:"#7de0a8"}}>✦</span>{msg}</div>;}
-
-// ══════════════════════════════════════════════════════════════
-// NAV
-// ══════════════════════════════════════════════════════════════
-const NAV=[{icon:"⚡",label:"Live Feed",id:"feed"},{icon:"🌐",label:"Global Explorer",id:"explorer"},{icon:"🎯",label:"Trade Radar",id:"radar"},{icon:"📡",label:"My Broadcasts",id:"broadcasts"},{icon:"💬",label:"Messages",id:"messages"},{icon:"📊",label:"Business Insights",id:"insights"},{icon:"📈",label:"Listing Insights",id:"listing_insights"},{icon:"💰",label:"Wallet & Payouts",id:"wallet"},{icon:"✦",label:"About Zalorix",id:"about"}];
-
-// ══════════════════════════════════════════════════════════════
-// FEED VIEW
-// ══════════════════════════════════════════════════════════════
-function FeedView(){
   const {state,setNav,toggleLike,setToast}=useZalorix();
   const {feed,user}=state;
   const [fl,setFl]=useState({});
@@ -638,7 +619,26 @@ function FeedView(){
         onBuy={l=>setCheckoutTarget(l)}
         onChat={id=>setChatTarget(id)}
         setNav={setNav}
-      />
+      />function Pill({ bg, color, border, children, sm }: { bg?: string; color?: string; border?: string; children: React.ReactNode; sm?: boolean }) {
+  return (
+    <span style={{
+      fontSize: sm ? 8 : 9,
+      fontWeight: 700,
+      letterSpacing: "0.07em",
+      background: bg,
+      color,
+      border: `1px solid ${border}`,
+      padding: sm ? "2px 7px" : "3px 9px",
+      borderRadius: 99,
+      whiteSpace: "nowrap",
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 4
+    }}>
+      {children}
+    </span>
+  );
+}
 
       {/* Inline checkout/chat modals triggered from spotlight */}
       {checkoutTarget&&user&&<CheckoutModal listing={checkoutTarget} onClose={()=>setCheckoutTarget(null)} />}
