@@ -8,7 +8,7 @@ import {
   Layers, MapPin, Briefcase, ShoppingBag, Grid, 
   Plus, X, MoreHorizontal, User, Sparkles, AlertCircle
 } from "lucide-react";
-
+// trigger rebuild
 // ==========================================
 // SYSTEM TYPES & SPECIFICATIONS
 // ==========================================
