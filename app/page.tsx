@@ -359,7 +359,7 @@ const INITIAL_CHATS: Record<string, ChatMessage[]> = {
             </div>
 
             {/* QUICK CATEGORY HORIZONTAL FILTER */}
-            <div style={{ display: "flex", gap: 8, overflowX: "auto", pb: 8 }}>
+            <div style={{ display: "flex", gap: 8, overflowX: "auto", paddingBottom: 8 }}>
               {["All", "Agriculture", "Apparel", "Tech Hardware", "Design Services"].map((cat) => (
                 <button
                   key={cat}
